@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 <style>
-.mybtnone:hover{background-color : #E40203}
+.mybtnone:hover{background-color : #02d9e4}
 </style>
 
 <hr>
@@ -42,6 +42,7 @@
 							<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 								{% csrf_token %}
 							<button type="submit" class="btn btn-primary">Add to Cart</button>
+							<button type="submit" class="btn btn-primary">View Details</button>
 </form>
    					</div>
    				</div>
