@@ -7,6 +7,7 @@
 <style>
 .mybtnone:hover{background-color : #02d9e4}
 </style>
+<
 
 <hr>
 
@@ -42,7 +43,7 @@
 							<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 								{% csrf_token %}
 							<button type="submit" class="btn btn-primary">Add to Cart</button>
-							<button type="submit" class="btn btn-primary">View Details</button>
+							<a href="#" class="btn btn-primary">View Details</a>
 </form>
    					</div>
    				</div>
@@ -56,10 +57,11 @@
    						<div class="card-body">
    						<h4 class="card-title">{{j.name}} Rs.{{j.price}}</h4>
    						<p class="card-text">{{j.desc}}</p>
-<form align="center" action="{% url 'add_cart' j.id %}" method="post">
-	{% csrf_token %}
+					<form align="center" action="{% url 'add_cart' j.id %}" method="post">
+						{% csrf_token %}
 							<button type="submit" class="btn btn-primary mybtnone">Add to Cart</button>
-</form>   					</div>
+							<a href="#" class="btn btn-primary">View Details</a>
+					</form>   					</div>
    				</div>
    			</div>
 
@@ -91,6 +93,7 @@
    						<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 	                        {% csrf_token %}
                             <button type="submit" class="btn btn-primary">Add to Cart</button>
+							<a href="#" class="btn btn-primary">View Details</a>
 </form>
    					</div>
    				</div>
@@ -113,6 +116,7 @@
    						<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 	                        {% csrf_token %}
                             <button type="submit" class="btn btn-primary">Add to Cart</button>
+							<a href="#" class="btn btn-primary">View Details</a>
 </form>
    					</div>
    				</div>
@@ -201,4 +205,48 @@ border-radius:10px;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
  <script src="{% static 'js/jquery.js' %}"></script>
 
-{% endblock %}
+
+ {% endblock %}
+
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+	<div class="col">
+	  <div class="card">
+		<img src="..." class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Card title</h5>
+		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card">
+		<img src="..." class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Card title</h5>
+		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card">
+		<img src="..." class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Card title</h5>
+		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card">
+		<img src="..." class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Card title</h5>
+		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  
