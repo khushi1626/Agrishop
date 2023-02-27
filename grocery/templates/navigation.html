@@ -22,6 +22,67 @@
     });
   </script>
   <style>
+    .bn29 {
+  border: none;
+  padding: 0.8em 2.5em;
+  outline: none;
+  color: white;
+  font-style: 1.2em;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.bn29:before,
+.bn29:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10em;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+}
+
+.bn29:before {
+  -webkit-filter: blur(7px);
+  filter: blur(7px);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-animation: pulse 10s infinite ease;
+  animation: pulse 10s infinite ease;
+}
+
+.bn29:after {
+  -webkit-filter: blur(0.3px);
+  filter: blur(0.3px);
+}
+
+.bn29:hover:before {
+  width: 115%;
+  height: 115%;
+}
+  </style>
+
+
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -93,9 +154,116 @@
     }
   </style>
 
-
   <style>
-    /* width */
+   
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+  }
+  /* .header{
+		margin: 0 auto;
+		max-width: 1150px;
+	}  */
+	}
+
+
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
+  </style>
+
+  
+
+  <!-- <style>
+    /* width*/
     ::-webkit-scrollbar {
       width: 20px;
     }
@@ -108,7 +276,7 @@
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-      background: #4a9bc7;
+      background: #18191a;
       border-radius: 10px;
     }
 
@@ -138,59 +306,50 @@
       color: #141616 !important;
 
 
-    }
-  </style>
+    } */
+  </style> -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body style="background-color:white">
-  <nav class="navbar navbar-expand-sm" style="background-color : #7460b4 ; border-bottom:1px solid #d17cb6">
-    <!-- Brand -->
-
+<body style="background-color:rgb(241, 231, 231)">
+  <!-- <nav class="navbar navbar-expand-sm" style="background-color : #7460b4 ; border-bottom:1px solid #d17cb6">
     <a class="navbar-brand pl-3" href="#" style="color:white ;">AgriShop</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <!-- Links -->
       <ul class="navbar-nav pl-2 text-center">
         {% if request.user.is_staff %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'admin_home' %}" style="color:white"><ion-icon style="margin-right:0px"
-              name="home-sharp"></ion-icon>Home</a>
+          <a class="nav-link" href="{% url 'admin_home' %}" style="color:white">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'view_user' %}" style="color:white"><ion-icon style="margin-right:0px"
-              name="people"></ion-icon>ViewUser</a>
+          <a class="nav-link" href="{% url 'view_user' %}" style="color:white">ViewUser</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'admin_viewBooking' %}" style="color:white"><ion-icon
-              style="margin-right:0px" name="logo-bitcoin"></ion-icon>ViewBooking</a>
+          <a class="nav-link" href="{% url 'admin_viewBooking' %}" style="color:white">ViewPurchase</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'view_feedback' %}" style="color:white"><ion-icon style="margin-right:0px"
-              name="chatbubbles"></ion-icon>ViewFeedback</a>
+          <a class="nav-link" href="{% url 'view_feedback' %}" style="color:white" >ViewFeedback</a>
         </li>
 
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false" style="color:white"><ion-icon style="margin-right:0px"
-              name="albums"></ion-icon>Product</a>
+            aria-expanded="false" style="color:white">Product</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{% url 'add_product' %}">AddProduct</a>
+            <a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a>
             <a class="dropdown-item" href="{% url 'admin_view_product' %}">View Product</a>
           </div>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false" style="color:white"><ion-icon style="margin-right:1px"
-              name="newspaper-sharp"></ion-icon>Category</a>
+            aria-expanded="false" style="color:white">Category</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'add_categary' %}">Add Category</a>
             <a class="dropdown-item" href="{% url 'view_categary' %}">View Category</a>
@@ -199,8 +358,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false" style="color:white"><ion-icon style="margin-right:1px"
-              name="newspaper-sharp"></ion-icon>Search</a>
+            aria-expanded="false" style="color:white">Search</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'search_booking' %}">Search Purchases</a>
 
@@ -209,8 +367,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false" style="color:white"><ion-icon style="margin-right:0px"
-              name="newspaper-sharp"></ion-icon>Reports</a>
+            aria-expanded="false" style="color:white"></ion-icon>Reports</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'bookingbetweendate_report' %}">Purchases Reports</a>
 
@@ -249,11 +406,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}" style="color:white">About</a>
+          <a class="nav-link" href="{% url 'about' %}" style="color:white">About Us</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}" style="color:white">Contact</a>
+          <a class="nav-link" href="{% url 'contact' %}" style="color:white">Contact Us</a>
         </li>
         {% endif %}
 
@@ -273,10 +430,6 @@
           </a>
         </li>
         {% else %}
-
-        <!--<li class="nav-item">
-      <p  class="nav-link" style="color:#91DE00"><ion-icon style="margin-right:0px;color:#91DE00" name="person-circle-sharp"></ion-icon>Welcome {{request.user.username}}</p>
-    </li>-->
         {% endif %}
         {% else %}
         <li class="nav-item">
@@ -305,14 +458,123 @@
 
     </div>
 
-  </nav>
+  </nav> -->
+  <!-- <li><a href="#">Home</a></li> -->
+  <header class="header">
+    <!-- <a href="#"><button class="bn29" style="margin-right: 30%;">Agrishop</button></a> -->
+    <!-- <img src="{% static 'images/logo_1.png' %}" style="width:60px;height:60px;" > -->
+    
+    <h1 class="logo"><a href="#">AgriShop</a></h1>
+    <ul class="main-nav">
+      {% if request.user.is_staff %}
+      <li>
+        <a href="{% url 'admin_home' %}">Home</a>
+      </li>
+
+      <li>
+        <a href="{% url 'view_user' %}">ViewUser</a>
+      </li>
+      <li>
+        <a href="{% url 'admin_viewBooking' %}">ViewPurchase</a>
+      </li>
+      <li>
+        <a href="{% url 'view_feedback' %}">ViewFeedback</a>
+      </li>
+
+      <li><a href="{% url 'add_product' %}">Add Product</a></li>
+
+      <li><a href="{% url 'admin_view_product' %}">View Product</a></li>
+
+      <li><a href="{% url 'add_categary' %}">Add Category</a></li>
+      <li><a href="{% url 'view_categary' %}">View Category</a></li>
+      <li><a href="{% url 'search_booking' %}">Search Purchases</a></li>
+
+      <li><a class="dropdown-item" href="{% url 'bookingbetweendate_report' %}">Purchases Reports</a></li>
+
+      {% endif %}
+
+      {% if request.user.username %}
+        {% if not request.user.is_staff %}
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li>
+          <a href="{% url 'view_booking' %}">View Purchases</a>
+        </li>
+
+        <li>
+          <a href="{% url 'send_feedback' request.user.id %}">Add Feedback</a>
+        </li>
+        <li>
+          <a href="{% url 'view_product' 0 %}">View Product</a>
+        </li>
+
+        <li>
+          <a href="{% url 'change_password' %}">Change Password</a>
+        </li>
+
+        {% endif %}
+        {% else %}
+
+        <li>
+          <a href="{% url 'home'  %}">Home</a>
+        </li>
+
+        <li>
+          <a href="{% url 'about' %}">About Us</a>
+        </li>
+
+        <li>
+          <a href="{% url 'contact' %}">Contact Us</a>
+        </li>
+        {% endif %}
+
+
+
+
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}" ><ion-icon style="margin-right:1px"
+            name="power-sharp"></ion-icon>Logout</a>
+        </li>
+        {% if not request.user.is_staff %}
+        <li>
+          <a href="{% url 'profile' %}">
+            <h5 style="color:#191620 ; text-transform : capitalize"><ion-icon
+                style="margin-right:4px;color:#1c1b1b" name="person-circle-sharp"></ion-icon>Welcome
+              {{request.user.username}}</h5>
+          </a>
+        </li>
+        {% else %}
+        {% endif %}
+        {% else %}
+        <li>
+          <a href="{% url 'login' %}" ><ion-icon
+              style="margin-right:2px" name="log-in-sharp"></ion-icon>User Login</a>
+        </li>
+        <li>
+          <a href="{% url 'login_admin' %}" ><ion-icon
+              style="margin-right:2px" name="log-in-sharp"></ion-icon>Admin Login</a>
+        </li>
+
+        {% endif %}
+
+        {% if not request.user.is_staff %}
+        {% if request.user.username %}
+        <a href="{% url 'cart' %}" style="border:1px solid gray"
+          class="btn btn-default btn-lg text-dark text-capitalize">
+          <ion-icon style="color:black;margin-top:2%" name="cart"></ion-icon><span
+            style="color:black">{{num1}}</span><span style="margin-left:6px;margin-top:2%;">Cart</span></a>
+        
+
+        {% endif %}
+        {% endif %}
+    </ul>
+  </header>
 
   {% block body %}
 
   {% endblock %}
-
-
-
 </body>
 
 </html>
