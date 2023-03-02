@@ -5,7 +5,7 @@
 {% if error == "yes" %}
 <script>
     alert('logged in successfully');
-    window.location=('{% url 'home' %}');
+    window.location="{% url 'home' %}";
 </script>
 {% endif %}
 {% if error == "not" %}
@@ -15,13 +15,113 @@
 {% endif %}
 
 <style>
-.mybtnone:hover{background-color : #E40203}
+.mybtnone:hover{background-color : #e4028a}
 </style>
-<body>
-<div class="container">
-    <h2 style="margin-top:20px" align="center">User Login Form</h2><hr>
+<style>
+  .bn632-hover {
+  width: 1000px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 1000% 1000%;
+  border-radius: 500px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
 
-<div class="container-fluid" style="width:70%;margin-top:10%">
+.bn632-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn27 {
+  background-image: linear-gradient(
+    to right,
+    #ed6ea0,
+    #ec8c69,
+    #f7186a,
+    #fbb03b
+  );
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+</style>
+
+<style>
+  .bn30 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.7em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: white;
+}
+
+.bn30 .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+}
+
+.bn30:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #0e0e10;
+}
+
+.bn30:hover {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+
+.bn30:hover .text {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+}
+</style>
+
+
+<body>
+
+<center>  <img src="{% static 'images/login_3.jpg' %}" alt="Girl in a jacket" style="width:1500px;height:500px;padding-bottom: 5px;"></center> 
+<br>
+<br>
+<div>
+  <center>
+    <button class="bn632-hover bn27"><h2>User Login Form</h2></button>
+  </center>
+</div>
+
+
+
+<div class="container">
+  
+<div class="container-fluid" style="width:70%;margin-top:2%;margin-bottom: 10%;">
 <form method="post" action="">
     {% csrf_token %}
   <div class="form-group">
@@ -32,8 +132,8 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pwd">
   </div>
-  <button type="submit" class="btn btn-primary mybtnone">Login</button>
-  <button class="btn btn-primary mybtnone"><a href="{% url 'signup' %}" style="color:white">Signup</a></button>
+  <button type="submit" class="bn30">Login</button>
+  <button class="btn btn-primary"><a href="{% url 'signup' %}">Signup</a></button>
 </form>
 </div>
 </div>

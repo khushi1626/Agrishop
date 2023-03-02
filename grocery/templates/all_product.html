@@ -55,6 +55,47 @@
 }
 </style>
 
+<style>
+	.bn632-hover {
+	width: 1000px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	cursor: pointer;
+	margin: 20px;
+	height: 55px;
+	text-align:center;
+	border: none;
+	background-size: 1000% 1000%;
+	border-radius: 500px;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+	background-position: 100% 0;
+	-o-transition: all .4s ease-in-out;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+	outline: none;
+  }
+  
+  .bn632-hover.bn27 {
+	background-image: linear-gradient(
+	  to right,
+	  #ed6ea0,
+	  #ec8c69,
+	  #f7186a,
+	  #fbb03b
+	);
+	box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
+  </style>
+
 
 <hr>
 
@@ -76,7 +117,14 @@
  <div class="container-fluid">
    	<h1 class="text-center mt-5 mb-5">
    	</h1>
-	 <h2>{{i.name}}</h2><hr>
+	 <!-- <h2>{{i.name}}</h2> -->
+	 <div>
+		<center>
+		  <button class="bn632-hover bn27"><h2>{{i.name}}</h2></button>
+		</center>
+	  </div>
+	 
+	 <hr>
    	<div id="{{i.id}}" class="carousel slide" data-ride="carousel">
    		<div class="carousel-inner row w-100 mx-auto">
 			{% for j in pro %}
@@ -139,7 +187,7 @@
    						<p class="card-text">{{j.desc}}</p>
    						<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 	                        {% csrf_token %}
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="bn30">Add to Cart</button>
 							<a href="#" class="btn btn-primary">View Details</a>
 </form>
    					</div>
@@ -152,7 +200,12 @@
 {% if request.user.is_authenticated %}
 <div class="container-fluid">
 	<hr>
-    <h2 class="text-danger">Recommended products related to your purchases - </h2><hr>
+    <!-- <h2 class="text-danger">Recommended products related to your purchases - </h2><hr> -->
+	<div>
+		<center>
+		  <button class="bn632-hover bn27"><h2>Recommended products related to your purchases</h2></button>
+		</center>
+	  </div>
     <div class="carousel-inner row w-100 mx-auto">
 			{% for j in product %}
 				<div class="carousel-item col-md-3 active"><div class="card">
@@ -162,7 +215,7 @@
    						<p class="card-text">{{j.desc}}</p>
    						<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 	                        {% csrf_token %}
-                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="bn30">Add to Cart</button>
 							<a href="#" class="btn btn-primary">View Details</a>
 </form>
    					</div>
@@ -256,44 +309,3 @@ border-radius:10px;
  {% endblock %}
 
 
-
-<div class="row row-cols-1 row-cols-md-2 g-4">
-	<div class="col">
-	  <div class="card">
-		<img src="..." class="card-img-top" alt="...">
-		<div class="card-body">
-		  <h5 class="card-title">Card title</h5>
-		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-		</div>
-	  </div>
-	</div>
-	<div class="col">
-	  <div class="card">
-		<img src="..." class="card-img-top" alt="...">
-		<div class="card-body">
-		  <h5 class="card-title">Card title</h5>
-		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-		</div>
-	  </div>
-	</div>
-	<div class="col">
-	  <div class="card">
-		<img src="..." class="card-img-top" alt="...">
-		<div class="card-body">
-		  <h5 class="card-title">Card title</h5>
-		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-		</div>
-	  </div>
-	</div>
-	<div class="col">
-	  <div class="card">
-		<img src="..." class="card-img-top" alt="...">
-		<div class="card-body">
-		  <h5 class="card-title">Card title</h5>
-		  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-		</div>
-	  </div>
-	</div>
-  </div>
-
-  

@@ -10,15 +10,65 @@ transform:translateY(-20px)
 }
 </style>
 
+<style>
+    .bn632-hover {
+    width: 1000px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 1000% 1000%;
+    border-radius: 500px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn27 {
+    background-image: linear-gradient(
+      to right,
+      #ed6ea0,
+      #ec8c69,
+      #f7186a,
+      #fbb03b
+    );
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
+  </style>
+
 <div class="container" style = "margin-top : 120px ">
-<h2 class="text-center" style = "font-family : 'Monotype Corsiva' ; color : #E6120E ; font-weight : bold">Contact US</h2>
+
+    <center>  <img src="{% static 'images/contactus.jfif' %}" alt="Girl in a jacket" style="width:1000px;height:500px;padding-bottom: 5px; padding-top: 0%;"></center> 
+
+    <div>
+        <center>
+          <button class="bn632-hover bn27" style="padding-bottom: 5%;"><h2>Contact Us</h2></button>
+        </center>
+      </div>
+      
+      
+
+<!-- <h2 class="text-center" style = "font-family : 'Monotype Corsiva' ; color : #E6120E ; font-weight : bold">Contact US</h2> -->
 <br>
-<br>
-<br><br>
 <div class=row>
 <div class="col-sm-3 prjdiv" >
 <h4 class="text-center"><i class="fas fa-phone-square"></i> Contact</h4>
-<p class="text-center" style = "font-weight : bold">+91 8602768216</p>
+<p class="text-center" style = "font-weight : bold">+91 99999999</p>
 </div>
 
 <div class="col-sm-3 prjdiv" >
@@ -28,7 +78,7 @@ transform:translateY(-20px)
 
 <div class="col-sm-3 prjdiv" >
 <h4 class="text-center"><i class="fas fa-address-card"></i> Address</h4>
-<p class="text-center" style = "font-weight : bold">M.P. Nagar</p>
+<p class="text-center" style = "font-weight : bold">XYZ road, city:New York</p>
 </div>
 
 <div class="col-sm-3 prjdiv" >

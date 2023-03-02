@@ -474,22 +474,22 @@ a {
       <li>
         <a href="{% url 'view_user' %}">ViewUser</a>
       </li>
-      <li>
+      <!-- <li>
         <a href="{% url 'admin_viewBooking' %}">ViewPurchase</a>
-      </li>
+      </li> -->
       <li>
         <a href="{% url 'view_feedback' %}">ViewFeedback</a>
       </li>
 
       <li><a href="{% url 'add_product' %}">Add Product</a></li>
 
-      <li><a href="{% url 'admin_view_product' %}">View Product</a></li>
+      <!-- <li><a href="{% url 'admin_view_product' %}">View Product</a></li> -->
 
       <li><a href="{% url 'add_categary' %}">Add Category</a></li>
       <li><a href="{% url 'view_categary' %}">View Category</a></li>
       <li><a href="{% url 'search_booking' %}">Search Purchases</a></li>
 
-      <li><a class="dropdown-item" href="{% url 'bookingbetweendate_report' %}">Purchases Reports</a></li>
+      <li><a class="dropdown-item" href="{% url 'bookingbetweendate_report' %}"> Reports</a></li>
 
       {% endif %}
 

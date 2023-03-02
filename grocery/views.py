@@ -81,6 +81,10 @@ def Signup(request):
         e = request.POST['email']
         i = request.FILES['img']
         con = request.POST['contact']
+
+    #validation for password
+
+
         user = User.objects.create_user(username=u, email=e, password=p, first_name=f, last_name=l)
         Profile.objects.create(user=user, dob=d, city=c, address=ad, contact=con, image=i)
         error = True
@@ -149,6 +153,7 @@ def Add_Product(request):
         i = request.FILES['img']
         d = request.POST['desc']
         ct = Category.objects.get(name=c)
+        #add validation for product
         Product.objects.create(category=ct, name=p, price=pr, image=i, desc=d)
         error = True
     d = {'cat': cat, 'error': error}
@@ -303,6 +308,8 @@ def Change_Password(request):
         n = request.POST['pwd1']
         c = request.POST['pwd2']
         o = request.POST['pwd3']
+        #password validation for new password
+        # #filter the old passwords 
         if c == n:
             u = User.objects.get(username__exact=request.user.username)
             u.set_password(n)
